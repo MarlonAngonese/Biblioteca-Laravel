@@ -40,4 +40,22 @@ class AuthorsController extends Controller
         Author::find($id)->delete();
         return redirect('authors');
     }
+
+    /**
+     * Edit Author Method
+     */
+    public function edit($id) {
+        $author = Author::find($id);
+
+        return view('authors.edit', compact('author'));
+    }
+
+    /**
+     * Update Author Method
+     * Updates an author attributes
+     */
+    public function update(Request $request, $id) {
+        Author::find($id)->update($request->all());
+        return redirect('authors');
+    }
 }

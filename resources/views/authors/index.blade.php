@@ -14,7 +14,7 @@
                 <tr>
                     <td>{{ $author->id }}</td>
                     <td>{{ $author->name }}</td>
-                    <td>{{ $author->birthday }}</td>
+                    <td>{{ Carbon\Carbon::parse($author->birthday)->format('d/m/Y') }}</td>
                     <td>
                         <a href="{{ route('authors.edit', ['id' => $author->id]) }}" class="btn-sm btn-warning">Editar</a>
                         <a href="{{ route('authors.delete', ['id' => $author->id]) }}" class="btn-sm btn-danger">Remover</a>
