@@ -17,5 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/authors', '\App\Http\Controllers\AuthorsController@index');
-Route::get('/authors/create', '\App\Http\Controllers\AuthorsController@create');
+Route::group(['prefix' => 'authors', 'where' => ['id' => '[0-9]+']], function () {
+    Route::get('', ['as' => 'authors', 'uses' => '\App\Http\Controllers\AuthorsController@index']);
+    Route::get('create', ['as' => 'authors.create', 'uses' => '\App\Http\Controllers\AuthorsController@create']);
+    Route::post('store', ['as' => 'authors.store', 'uses' => '\App\Http\Controllers\AuthorsController@store']);
+    Route::get('delete/{id}', ['as' => 'authors.delete', 'uses' => '\App\Http\Controllers\AuthorsController@delete']);
+    Route::get('edit/{id}', ['as' => 'authors.edit', 'uses' => '\App\Http\Controllers\AuthorsController@edit']);
+    Route::get('update/{id}', ['as' => 'authors.update', 'uses' => '\App\Http\Controllers\AuthorsController@update']);
+});
