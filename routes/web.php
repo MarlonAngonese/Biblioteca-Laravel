@@ -25,3 +25,5 @@ Route::group(['prefix' => 'authors', 'where' => ['id' => '[0-9]+']], function ()
     Route::get('edit/{id}', ['as' => 'authors.edit', 'uses' => '\App\Http\Controllers\AuthorsController@edit']);
     Route::put('update/{id}', ['as' => 'authors.update', 'uses' => '\App\Http\Controllers\AuthorsController@update']);
 });
+
+Route::get('clients', '\App\Http\Controllers\ClientsController@index');
