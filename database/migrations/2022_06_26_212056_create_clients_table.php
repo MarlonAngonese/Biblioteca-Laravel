@@ -15,14 +15,13 @@ return new class extends Migration
     {
         Schema::create('clients', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('lastname', 100);
-            $table->date('birthday');
-            $table->string('password', 100);
-            $table->string('email', 100);
-            $table->string('username', 100);
+            $table->string('name', 100)->nullable(true);
+            $table->string('lastname', 100)->nullable(true);
+            $table->date('birthday')->nullable(true);
+            $table->string('email', 100)->nullable(true);
+            $table->string('password', 255)->nullable(true);
+            $table->string('username', 30)->nullable(true);
             $table->timestamps();
-
         });
     }
 

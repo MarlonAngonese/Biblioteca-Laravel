@@ -13,10 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('authors', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('name', 100);
-            $table->date('birthday');
+        Schema::create('publishers', function (Blueprint $table) {
+            $table->id();
+            $table->string('name', 100)->nullable(true);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('authors');
+        Schema::dropIfExists('publishers');
     }
 };
