@@ -4,7 +4,7 @@
 
 @section('js')
     <script>
-        function ConfirmaExclusao(id) {
+        function ConfirmDelete(id) {
             swal.fire({
                 title: "Confirma a exclusão?",
                 text: "Esta ação não poderá ser revertida!",
@@ -14,17 +14,18 @@
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Sim, excluir!",
                 cancelButtonText: "Cancelar!",
-                closeOnConfirm: false,
-            }).then(function(isConfirm) {
-                $.get('/' + @yield('table-delete') + '/delete/' + id, function(data) {
-                    swal.fire(
-                        'Deletado!',
-                        'Exclusão confirmada.',
-                        'success'
-                    ).then(function() {
-                        window.location.reload();
+            }).then(function(result) {
+                if (result.value) {
+                    $.get('/' + @yield('table-delete') + '/delete/' + id, function(data) {
+                        swal.fire(
+                            'Deletado!',
+                            'Exclusão confirmada.',
+                            'success'
+                        ).then(function() {
+                            window.location.reload();
+                        })
                     })
-                })
+                }
             })
         }
     </script>

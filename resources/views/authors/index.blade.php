@@ -17,8 +17,8 @@
                     <td>{{ $author->name }}</td>
                     <td>{{ Carbon\Carbon::parse($author->birthday)->format('d/m/Y') }}</td>
                     <td>
-                        <a href="{{ route('authors.edit', ['id' => $author->id]) }}" class="btn-sm btn-warning">Editar</a>
-                        <a href="#" onclick="return ConfirmaExclusao({{$author->id}})" class="btn-sm btn-danger">Remover</a>
+                        <a href="{{ route('authors.edit', ['id' => $author->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                        <button type="button" onclick="return ConfirmDelete({{$author->id}})" class="btn btn-sm btn-danger">Remover</button>
                     </td>
                 </tr>
             @endforeach
