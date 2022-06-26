@@ -6,4 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class PurchaseBook extends Model
 {
+     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'book_id',
+        'purchase_id'
+    ];
 }
