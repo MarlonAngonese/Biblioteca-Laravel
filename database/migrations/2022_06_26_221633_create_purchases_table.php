@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('purchases', function (Blueprint $table) {
             $table->id();
-            $table->string('payment_method', 100)->nullable(true);
-            $table->double('total')->nullable(true);
-            $table->boolean('status')->nullable(true)->default(false);
-            $table->unsignedBigInteger('client_id')->nullable(true);
+            $table->string('payment_method', 100);
+            $table->double('total');
+            $table->boolean('status');
+            $table->unsignedBigInteger('client_id');
             $table->foreign('client_id')->references('id')->on('clients')->onDelete('cascade');
             $table->timestamps();
         });

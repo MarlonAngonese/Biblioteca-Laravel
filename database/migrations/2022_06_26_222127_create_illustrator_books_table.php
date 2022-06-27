@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('illustrator_books', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('illustrator_id')->nullable(true);
-            $table->unsignedBigInteger('book_id')->nullable(true);
+            $table->unsignedBigInteger('illustrator_id');
+            $table->unsignedBigInteger('book_id');
             $table->foreign('illustrator_id')->references('id')->on('illustrators')->onDelete('cascade');
             $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->timestamps();

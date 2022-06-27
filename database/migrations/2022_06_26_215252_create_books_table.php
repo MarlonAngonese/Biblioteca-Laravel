@@ -15,12 +15,12 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100)->nullable(true);
-            $table->double('price')->nullable(true);
-            $table->string('edition', 100)->nullable(true);
-            $table->string('image_url', 255)->nullable(true);
-            $table->unsignedBigInteger('category_id')->nullable(true);
-            $table->unsignedBigInteger('publisher_id')->nullable(true);
+            $table->string('name', 100);
+            $table->double('price');
+            $table->string('edition', 100);
+            $table->string('image_url', 255);
+            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('publisher_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');
             $table->timestamps();
