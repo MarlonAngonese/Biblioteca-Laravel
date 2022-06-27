@@ -4,20 +4,15 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Author extends Model
+class PurchaseBook extends Model
 {
-    /**
+     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'birthday',
-        'bio',
+        'book_id',
+        'purchase_id'
     ];
-
-    public function books() {
-        return $this->belongsToMany('App\Models\Book', 'author_books');
-    }
 }

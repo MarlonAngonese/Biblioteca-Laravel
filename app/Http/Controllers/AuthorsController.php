@@ -27,8 +27,7 @@ class AuthorsController extends Controller
      * Stores a new author into the database
      */
     public function store(Request $request) {
-        $new_author = $request->all();
-        Author::create($new_author);
+        Author::create($request->all());
 
         return redirect('authors');
     }

@@ -13,16 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('clients', function (Blueprint $table) {
+        Schema::create('illustrator_books', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
-            $table->string('lastname', 100);
-            $table->date('birthday');
-            $table->string('password', 100);
-            $table->string('email', 100);
-            $table->string('username', 100);
+            $table->unsignedBigInteger('illustrator_id');
+            $table->unsignedBigInteger('book_id');
+            $table->foreign('illustrator_id')->references('id')->on('illustrators')->onDelete('cascade');
+            $table->foreign('book_id')->references('id')->on('books')->onDelete('cascade');
             $table->timestamps();
-
         });
     }
 
@@ -33,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('clients');
+        Schema::dropIfExists('illustrator_books');
     }
 };

@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Client extends Model
+class Illustrator extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -13,14 +13,11 @@ class Client extends Model
      */
     protected $fillable = [
         'name',
-        'lastname',
         'birthday',
-        'email',
-        'password',
-        'username'
+        'bio',
     ];
 
-    public function purchases() {
-        return $this->hasMany("App\Models\Purchase");
+    public function books() {
+        return $this->belongsToMany('App\Models\Book', 'illustrator_books');
     }
 }
