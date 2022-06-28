@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Rules\NameLength;
+use App\Http\Requests\AuthorRequest;
 use App\Models\Author;
 use Illuminate\Http\Request;
 
@@ -36,7 +36,7 @@ class AuthorsController extends Controller
      * Store Author Method
      * Stores a new author into the database
      */
-    public function store(Request $request) {
+    public function store(AuthorRequest $request) {
         Author::create($request->all());
 
         return redirect('authors');
@@ -63,10 +63,9 @@ class AuthorsController extends Controller
      * Update Author Method
      * Updates an author attributes
      */
-    public function update(Request $request, $id) {
-        $this->validate($request, ['name' => new NameLength]);
-
+    public function update(AuthorRequest $request, $id) {
         Author::find($id)->update($request->all());
+
         return redirect('authors');
     }
 }

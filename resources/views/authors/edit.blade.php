@@ -29,7 +29,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::submit('Criar autor', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('Editar Autor', ['class' => 'btn btn-primary']) !!}
             </div>
         {!! Form::close() !!}
     </div>
