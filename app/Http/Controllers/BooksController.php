@@ -12,16 +12,16 @@ class BooksController extends Controller
     /**
      * Index Method
      */
-    public function index(Request $filtro) {
-        $filtragem = $filtro->get('desc_filtro');
+    public function index(Request $filter) {
+        $filtering = $filter->get('desc_filter');
 
-        if ($filtragem == null)
+        if ($filtering == null)
             $books = Book::orderBy('name')->paginate(5);
         else
-            $books = Book::where('name', 'ilike', '%'.$filtragem.'%')
+            $books = Book::where('name', 'ilike', '%'.$filtering.'%')
                                 ->orderBy("name")
                                 ->paginate(5)
-                                ->setpath('books?name=' . $filtragem);
+                                ->setpath('books?name=' . $filtering);
 
         return view('books.index', ['books' => $books]);
     }
@@ -38,23 +38,9 @@ class BooksController extends Controller
      * Stores a new book into the database
      */
     public function store(BookRequest $request) {
-        $book = Book::create([
-            'name' => $request->get('name'),
-            'price' => $request->get('price'),
-            'edition' => $request->get('edition'),
-            'image_url' => $request->get('image_url'),
-            'category_id' => $request->get('category_id'),
-            'publisher_id' => $request->get('publisher_id'),
-        ]);
-
-        $authors = $request->authors;
-
-        foreach ($authors as $i => $author) {
-            AuthorBook::create([
-                'book_id' => $book->id,
-                'author_id' => $authors[$i]
-            ]);
-        }
+        $book = Book::create($request->all());
+        // Synchronize Book with Authors to author_books table 
+        $book->authors()->sync($request->get('authors'));
 
         return redirect('books');
     }
@@ -64,6 +50,7 @@ class BooksController extends Controller
      */
     public function delete($id) {
         Book::find($id)->delete();
+
         return redirect('books');
     }
 
@@ -76,30 +63,27 @@ class BooksController extends Controller
         return view('books.edit', compact('book'));
     }
 
-    // /**
-    //  * Update Book Method
-    //  * Updates an book attributes
-    //  */
-    // public function update(BookRequest $request, $id) {
-    //     $book = Book::find($id)->update([
-    //         'name' => $request->get('name'),
-    //         'price' => $request->get('price'),
-    //         'edition' => $request->get('edition'),
-    //         'image_url' => $request->get('image_url'),
-    //         'category_id' => $request->get('category_id'),
-    //         'publisher_id' => $request->get('publisher_id'),
-    //     ]);
+    /**
+     * Update Book Method
+     * Updates a book attributes
+     */
+    public function update(BookRequest $request, $id) {
+        $book = Book::find($id);
+        $book->update($request->all());
+        // Synchronize Book with Authors to author_books table 
+        $book->authors()->sync($request->get('authors'));
 
-    //     $authors = $request->authors;
+        return redirect('books');
+    }
 
-    //     foreach ($authors as $i => $author) {
-    //         AuthorBook::findOrNew([
-    //             'book_id' => $book->id,
-    //             'author_id' => $authors[$i]
-    //         ]);
-    //     }
 
-    //     return redirect('books');
-    // }
+    /**
+     * View Book Method
+     * View a book attributes
+     */
+    public function view($id) {
+        $book = Book::find($id);
 
+        return view ('books.view', compact('book'));
+    }
 }
