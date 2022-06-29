@@ -63,6 +63,15 @@ Route::group(['prefix' => 'categories', 'where' => ['id' => '[0-9]+']], function
     Route::put('update/{id}', ['as' => 'categories.update', 'uses' => '\App\Http\Controllers\CategoriesController@update']);
 });
 
+Route::group(['prefix' => 'purchases', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'purchases', 'uses' => '\App\Http\Controllers\PurchasesController@index']);
+    Route::get('create', ['as' => 'purchases.create', 'uses' => '\App\Http\Controllers\PurchasesController@create']);
+    Route::post('store', ['as' => 'purchases.store', 'uses' => '\App\Http\Controllers\PurchasesController@store']);
+    Route::get('delete/{id}', ['as' => 'purchases.delete', 'uses' => '\App\Http\Controllers\PurchasesController@delete']);
+    Route::get('edit/{id}', ['as' => 'purchases.edit', 'uses' => '\App\Http\Controllers\PurchasesController@edit']);
+    Route::put('update/{id}', ['as' => 'purchases.update', 'uses' => '\App\Http\Controllers\PurchasesController@update']);
+});
+
 Route::group(['prefix' => 'illustrators', 'where' => ['id' => '[0-9]+']], function () {
     Route::any('', ['as' => 'illustrators', 'uses' => '\App\Http\Controllers\IllustratorsController@index']);
     Route::get('create', ['as' => 'illustrators.create', 'uses' => '\App\Http\Controllers\IllustratorsController@create']);
