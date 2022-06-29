@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Clientes</h1>
+        <h1>Ilustradores</h1>
 
-        {!! Form::open(['name' => 'form_name', 'route' => 'clients']) !!}
+        {!! Form::open(['name' => 'form_name', 'route' => 'illustrators']) !!}
             <div class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="desc_filter" class="form-control" style="width: 80% !important" placeholder="Pesquisa...">
@@ -21,36 +21,36 @@
             <thead>
                         <th>#</th>
                         <th>Nome</th>
-                        <th>Sobrenome</th>
-                        <th>E-mail</th>
-                        <th>Usuário</th>
                         <th>Data de Nascimento</th>
+                        <th>Livros</th>
                         <th>Ações</th>
             </thead>
             <tbody>
-                @foreach($clients as $client)
+                @foreach($illustrators as $illustrator)
                     <tr>
-                        <td>{{ $client->id }}</td>
-                        <td>{{ $client->name }}</td>
-                        <td>{{ $client->lastname }}</td>
-                        <td>{{ $client->email }}</td>
-                        <td>{{ $client->username }}</td>
-                        <td>{{ Carbon\Carbon::parse($client->birthday)->format('d/m/Y') }}</td>
+                        <td>{{ $illustrator->id }}</td>
+                        <td>{{ $illustrator->name }}</td>
+                        <td>{{ Carbon\Carbon::parse($illustrator->birthday)->format('d/m/Y') }}</td>
                         <td>
-                            <a href="{{ route('clients.edit', ['id' => $client->id]) }}" class="btn btn-sm btn-warning">Editar</a>
-                            <button type="button" onclick="return ConfirmDelete({{$client->id}})" class="btn btn-sm btn-danger">Remover</button>
+                            @foreach ($illustrator->books as $book)
+                                <li>{{ $illustrator->name }}</li>
+                            @endforeach
+                        </td>
+                        <td>
+                            <a href="{{ route('illustrators.edit', ['id' => $illustrator->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <button type="button" onclick="return ConfirmDelete({{$illustrator->id}})" class="btn btn-sm btn-danger">Remover</button>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-        {{ $clients->links("pagination::bootstrap-4") }}
+        {{ $illustrators->links("pagination::bootstrap-4") }}
 
-        <a href="{{ route('clients.create', []) }}" class="btn-sm btn-info">Novo Cliente</a>
+        <a href="{{ route('illustrators.create', []) }}" class="btn-sm btn-info">Novo ilustrador</a>
     </div>
 @stop
 
 @section('table-delete')
-"clients"
+"illustrators"
 @endsection

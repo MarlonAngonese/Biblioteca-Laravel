@@ -63,4 +63,13 @@ Route::group(['prefix' => 'categories', 'where' => ['id' => '[0-9]+']], function
     Route::put('update/{id}', ['as' => 'categories.update', 'uses' => '\App\Http\Controllers\CategoriesController@update']);
 });
 
-Route::get('clients', '\App\Http\Controllers\ClientsController@index');
+Route::group(['prefix' => 'illustrators', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'illustrators', 'uses' => '\App\Http\Controllers\IllustratorsController@index']);
+    Route::get('create', ['as' => 'illustrators.create', 'uses' => '\App\Http\Controllers\IllustratorsController@create']);
+    Route::post('store', ['as' => 'illustrators.store', 'uses' => '\App\Http\Controllers\IllustratorsController@store']);
+    Route::get('delete/{id}', ['as' => 'illustrators.delete', 'uses' => '\App\Http\Controllers\IllustratorsController@delete']);
+    Route::get('edit/{id}', ['as' => 'illustrators.edit', 'uses' => '\App\Http\Controllers\IllustratorsController@edit']);
+    Route::put('update/{id}', ['as' => 'illustrators.update', 'uses' => '\App\Http\Controllers\IllustratorsController@update']);
+});
+
+
