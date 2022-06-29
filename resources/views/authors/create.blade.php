@@ -24,7 +24,7 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('bio', 'Sobre:') !!}
+                {!! Form::label('bio', 'Biografia:') !!}
                 {!! Form::textarea('bio', null, ['class' => 'form-control', 'rows' => 3]) !!}
             </div>
 
