@@ -225,13 +225,147 @@ return [
     */
 
     'menu' => [
-        ['header' => 'AUTORES'],
         [
-            'text' => 'Lista de Autores',
-            'url' => 'authors',
-            'icon' => 'fas fa-fw fa-users',
+            'text'    => 'Clientes',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'clients',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'clients/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
         ],
+
+        [
+            'text'    => 'Autores',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'authors',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'authors/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ], 
+        ],
+
+        [
+            'text'    => 'Livros',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'books',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'books/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ], 
+        ],
+
+        [
+            'text'    => 'Editora',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'publishers',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'publishers/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
+
+        [
+            'text'    => 'Categorias',
+            'icon'    => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'        => 'Listagem',
+                    'url'         => 'categories',
+                    // 'icon'        => 'far fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-circle text-info',
+                    // 'label'       => 4,
+                    // 'label_color' => 'success',
+                ],
+                [
+                    'text'        => 'Cadastrar',
+                    'url'         => 'categories/create',
+                    'icon'        => 'fas fa-fw fa-file',
+                ],
+            ],
+        ],
+
+            [
+                'text'    => 'Compras',
+                'icon'    => 'fas fa-fw fa-user',
+                'submenu' => [
+                    [
+                        'text'        => 'Listagem',
+                        'url'         => 'purchases',
+                        // 'icon'        => 'far fa-fw fa-file',
+                        'icon'        => 'fas fa-fw fa-circle text-info',
+                        // 'label'       => 4,
+                        // 'label_color' => 'success',
+                    ],
+                    [
+                        'text'        => 'Cadastrar',
+                        'url'         => 'purchases/create',
+                        'icon'        => 'fas fa-fw fa-file',
+                    ],
+                ],
+            ],
+
+            [
+                'text'    => 'Ilustradores',
+                'icon'    => 'fas fa-fw fa-user',
+                'submenu' => [
+                    [
+                        'text'        => 'Listagem',
+                        'url'         => 'illustrators',
+                        // 'icon'        => 'far fa-fw fa-file',
+                        'icon'        => 'fas fa-fw fa-circle text-info',
+                        // 'label'       => 4,
+                        // 'label_color' => 'success',
+                    ],
+                    [
+                        'text'        => 'Cadastrar',
+                        'url'         => 'illustrators/create',
+                        'icon'        => 'fas fa-fw fa-file',
+                    ],
+                ],
+            ],
     ],
+    
 
     /*
     |--------------------------------------------------------------------------

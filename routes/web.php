@@ -36,6 +36,15 @@ Route::group(['prefix' => 'books', 'where' => ['id' => '[0-9]+']], function () {
     Route::put('update/{id}', ['as' => 'books.update', 'uses' => '\App\Http\Controllers\BooksController@update']);
 });
 
+Route::group(['prefix' => 'clients', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'clients', 'uses' => '\App\Http\Controllers\ClientsController@index']);
+    Route::get('create', ['as' => 'clients.create', 'uses' => '\App\Http\Controllers\ClientsController@create']);
+    Route::post('store', ['as' => 'clients.store', 'uses' => '\App\Http\Controllers\ClientsController@store']);
+    Route::get('delete/{id}', ['as' => 'clients.delete', 'uses' => '\App\Http\Controllers\ClientsController@delete']);
+    Route::get('edit/{id}', ['as' => 'clients.edit', 'uses' => '\App\Http\Controllers\ClientsController@edit']);
+    Route::put('update/{id}', ['as' => 'clients.update', 'uses' => '\App\Http\Controllers\ClientsController@update']);
+});
+
 Route::group(['prefix' => 'publishers', 'where' => ['id' => '[0-9]+']], function () {
     Route::any('', ['as' => 'publishers', 'uses' => '\App\Http\Controllers\PublishersController@index']);
     Route::get('create', ['as' => 'publishers.create', 'uses' => '\App\Http\Controllers\PublishersController@create']);
@@ -62,3 +71,14 @@ Route::group(['prefix' => 'purchases', 'where' => ['id' => '[0-9]+']], function 
     Route::get('edit/{id}', ['as' => 'purchases.edit', 'uses' => '\App\Http\Controllers\PurchasesController@edit']);
     Route::put('update/{id}', ['as' => 'purchases.update', 'uses' => '\App\Http\Controllers\PurchasesController@update']);
 });
+
+Route::group(['prefix' => 'illustrators', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'illustrators', 'uses' => '\App\Http\Controllers\IllustratorsController@index']);
+    Route::get('create', ['as' => 'illustrators.create', 'uses' => '\App\Http\Controllers\IllustratorsController@create']);
+    Route::post('store', ['as' => 'illustrators.store', 'uses' => '\App\Http\Controllers\IllustratorsController@store']);
+    Route::get('delete/{id}', ['as' => 'illustrators.delete', 'uses' => '\App\Http\Controllers\IllustratorsController@delete']);
+    Route::get('edit/{id}', ['as' => 'illustrators.edit', 'uses' => '\App\Http\Controllers\IllustratorsController@edit']);
+    Route::put('update/{id}', ['as' => 'illustrators.update', 'uses' => '\App\Http\Controllers\IllustratorsController@update']);
+});
+
+
