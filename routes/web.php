@@ -35,4 +35,12 @@ Route::group(['prefix' => 'books', 'where' => ['id' => '[0-9]+']], function () {
     Route::put('update/{id}', ['as' => 'books.update', 'uses' => '\App\Http\Controllers\BooksController@update']);
 });
 
-Route::get('clients', '\App\Http\Controllers\ClientsController@index');
+Route::group(['prefix' => 'clients', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'clients', 'uses' => '\App\Http\Controllers\ClientsController@index']);
+    Route::get('create', ['as' => 'clients.create', 'uses' => '\App\Http\Controllers\ClientsController@create']);
+    Route::post('store', ['as' => 'clients.store', 'uses' => '\App\Http\Controllers\ClientsController@store']);
+    Route::get('delete/{id}', ['as' => 'clients.delete', 'uses' => '\App\Http\Controllers\ClientsController@delete']);
+    Route::get('edit/{id}', ['as' => 'clients.edit', 'uses' => '\App\Http\Controllers\ClientsController@edit']);
+    Route::put('update/{id}', ['as' => 'clients.update', 'uses' => '\App\Http\Controllers\ClientsController@update']);
+});
+
