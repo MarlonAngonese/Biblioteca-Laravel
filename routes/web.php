@@ -28,6 +28,7 @@ Route::group(['prefix' => 'authors', 'where' => ['id' => '[0-9]+']], function ()
 
 Route::group(['prefix' => 'books', 'where' => ['id' => '[0-9]+']], function () {
     Route::any('', ['as' => 'books', 'uses' => '\App\Http\Controllers\BooksController@index']);
+    Route::get('/view/{id}', ['as' => 'books.view', 'uses' => '\App\Http\Controllers\BooksController@view']);
     Route::get('create', ['as' => 'books.create', 'uses' => '\App\Http\Controllers\BooksController@create']);
     Route::post('store', ['as' => 'books.store', 'uses' => '\App\Http\Controllers\BooksController@store']);
     Route::get('delete/{id}', ['as' => 'books.delete', 'uses' => '\App\Http\Controllers\BooksController@delete']);
@@ -44,3 +45,22 @@ Route::group(['prefix' => 'clients', 'where' => ['id' => '[0-9]+']], function ()
     Route::put('update/{id}', ['as' => 'clients.update', 'uses' => '\App\Http\Controllers\ClientsController@update']);
 });
 
+Route::group(['prefix' => 'publishers', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'publishers', 'uses' => '\App\Http\Controllers\PublishersController@index']);
+    Route::get('create', ['as' => 'publishers.create', 'uses' => '\App\Http\Controllers\PublishersController@create']);
+    Route::post('store', ['as' => 'publishers.store', 'uses' => '\App\Http\Controllers\PublishersController@store']);
+    Route::get('delete/{id}', ['as' => 'publishers.delete', 'uses' => '\App\Http\Controllers\PublishersController@delete']);
+    Route::get('edit/{id}', ['as' => 'publishers.edit', 'uses' => '\App\Http\Controllers\PublishersController@edit']);
+    Route::put('update/{id}', ['as' => 'publishers.update', 'uses' => '\App\Http\Controllers\PublishersController@update']);
+});
+
+Route::group(['prefix' => 'categories', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'categories', 'uses' => '\App\Http\Controllers\CategoriesController@index']);
+    Route::get('create', ['as' => 'categories.create', 'uses' => '\App\Http\Controllers\CategoriesController@create']);
+    Route::post('store', ['as' => 'categories.store', 'uses' => '\App\Http\Controllers\CategoriesController@store']);
+    Route::get('delete/{id}', ['as' => 'categories.delete', 'uses' => '\App\Http\Controllers\CategoriesController@delete']);
+    Route::get('edit/{id}', ['as' => 'categories.edit', 'uses' => '\App\Http\Controllers\CategoriesController@edit']);
+    Route::put('update/{id}', ['as' => 'categories.update', 'uses' => '\App\Http\Controllers\CategoriesController@update']);
+});
+
+Route::get('clients', '\App\Http\Controllers\ClientsController@index');

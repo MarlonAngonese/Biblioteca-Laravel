@@ -11,16 +11,16 @@ class AuthorsController extends Controller
     /**
      * Index Method
      */
-    public function index(Request $filtro) {
-        $filtragem = $filtro->get('desc_filtro');
+    public function index(Request $filter) {
+        $filtering = $filter->get('desc_filter');
 
-        if ($filtragem == null)
+        if ($filtering == null)
             $authors = Author::orderBy('name')->paginate(5);
         else
-            $authors = Author::where('name', 'ilike', '%'.$filtragem.'%')
+            $authors = Author::where('name', 'ilike', '%'.$filtering.'%')
                                 ->orderBy("name")
                                 ->paginate(5)
-                                ->setpath('authors?name=' . $filtragem);
+                                ->setpath('authors?name=' . $filtering);
 
         return view('authors.index', ['authors' => $authors]);
     }
@@ -47,6 +47,7 @@ class AuthorsController extends Controller
      */
     public function delete($id) {
         Author::find($id)->delete();
+
         return redirect('authors');
     }
 

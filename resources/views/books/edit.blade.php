@@ -25,7 +25,7 @@
 
             <div class="form-group">
                 {!! Form::label('edition', 'Edição:') !!}
-                {!! Form::text('edition', $book->price, ['class' => 'form-control', 'required']) !!}
+                {!! Form::text('edition', $book->edition, ['class' => 'form-control', 'required']) !!}
             </div>
 
             <div class="form-group">

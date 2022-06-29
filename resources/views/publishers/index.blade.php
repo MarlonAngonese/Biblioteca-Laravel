@@ -2,9 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1>Livros</h1>
+        <h1>Editoras</h1>
 
-        {!! Form::open(['name' => 'form_name', 'route' => 'books']) !!}
+        {!! Form::open(['name' => 'form_name', 'route' => 'publishers']) !!}
             <div class="sidebar-form">
                 <div class="input-group">
                     <input type="text" name="desc_filter" class="form-control" style="width: 80% !important" placeholder="Pesquisa...">
@@ -21,39 +21,34 @@
             <thead>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Categoria</th>
-                <th>Editora</th>
-                <th>Autores</th>
+                <th>Livros</th>
                 <th>Ações</th>
             </thead>
             <tbody>
-                @foreach($books as $book)
+                @foreach($publishers as $publisher)
                     <tr>
-                        <td>{{ $book->id }}</td>
-                        <td>{{ $book->name }}</td>
-                        <td>{{ $book->category->name }}</td>
-                        <td>{{ $book->publisher->name }}</td>
+                        <td>{{ $publisher->id }}</td>
+                        <td>{{ $publisher->name }}</td>
                         <td>
-                            @foreach ($book->authors as $author)
-                                <li>{{ $author->name }}</li>
+                            @foreach ($publisher->books as $book)
+                                <li>{{ $book->name }}</li>
                             @endforeach
                         </td>
                         <td>
-                            <a href="{{ route('books.view', ['id' => $book->id]) }}" class="btn btn-sm btn-primary">Ver</a>
-                            <a href="{{ route('books.edit', ['id' => $book->id]) }}" class="btn btn-sm btn-warning">Editar</a>
-                            <button type="button" onclick="return ConfirmDelete({{$book->id}})" class="btn btn-sm btn-danger">Remover</button>
+                            <a href="{{ route('publishers.edit', ['id' => $publisher->id]) }}" class="btn btn-sm btn-warning">Editar</a>
+                            <button type="button" onclick="return ConfirmDelete({{$publisher->id}})" class="btn btn-sm btn-danger">Remover</button>
                         </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
 
-        {{ $books->links("pagination::bootstrap-4") }}
+        {{ $publishers->links("pagination::bootstrap-4") }}
 
-        <a href="{{ route('books.create', []) }}" class="btn-sm btn-info">Novo Livro</a>
+        <a href="{{ route('publishers.create', []) }}" class="btn-sm btn-info">Nova Editora</a>
     </div>
 @stop
 
 @section('table-delete')
-"books"
+"publishers"
 @endsection
