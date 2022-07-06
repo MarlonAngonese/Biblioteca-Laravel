@@ -232,135 +232,148 @@ return [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'clients',
-                    // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-circle text-info',
-                    // 'label'       => 4,
-                    // 'label_color' => 'success',
+                
+                    'icon'        => 'fas fa-fw fa-list',
+               
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'clients/create',
-                    'icon'        => 'fas fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-plus',
                 ],
             ],
         ],
 
         [
             'text'    => 'Autores',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-fw fa-users',
             'submenu' => [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'authors',
-                    // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-circle text-info',
-                    // 'label'       => 4,
-                    // 'label_color' => 'success',
+             
+                    'icon'        => 'fas fa-fw fa-list',
+               
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'authors/create',
-                    'icon'        => 'fas fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-plus',
                 ],
             ], 
         ],
 
         [
             'text'    => 'Livros',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-fw fa-book',
             'submenu' => [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'books',
-                    // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-circle text-info',
-                    // 'label'       => 4,
-                    // 'label_color' => 'success',
+                 
+                    'icon'        => 'fas fa-fw fa-list',
+                   
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'books/create',
-                    'icon'        => 'fas fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-plus',
                 ],
             ], 
         ],
 
         [
             'text'    => 'Editora',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-fw fa-dove',
             'submenu' => [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'publishers',
-                    // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-circle text-info',
-                    // 'label'       => 4,
-                    // 'label_color' => 'success',
+             
+                    'icon'        => 'fas fa-fw fa-list',
+              
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'publishers/create',
-                    'icon'        => 'fas fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-plus',
                 ],
             ],
         ],
 
         [
             'text'    => 'Categorias',
-            'icon'    => 'fas fa-fw fa-user',
+            'icon'    => 'fas fa-fw fa-list',
             'submenu' => [
                 [
                     'text'        => 'Listagem',
                     'url'         => 'categories',
-                    // 'icon'        => 'far fa-fw fa-file',
-                    'icon'        => 'fas fa-fw fa-circle text-info',
-                    // 'label'       => 4,
-                    // 'label_color' => 'success',
+             
+                    'icon'        => 'fas fa-fw fa-list',
+                  
                 ],
                 [
                     'text'        => 'Cadastrar',
                     'url'         => 'categories/create',
-                    'icon'        => 'fas fa-fw fa-file',
+                    'icon'        => 'fas fa-fw fa-plus',
                 ],
             ],
         ],
 
             [
                 'text'    => 'Compras',
-                'icon'    => 'fas fa-fw fa-user',
+                'icon'    => 'fas fa-fw fa-barcode',
                 'submenu' => [
                     [
                         'text'        => 'Listagem',
                         'url'         => 'purchases',
-                        // 'icon'        => 'far fa-fw fa-file',
-                        'icon'        => 'fas fa-fw fa-circle text-info',
-                        // 'label'       => 4,
-                        // 'label_color' => 'success',
+                     
+                        'icon'        => 'fas fa-fw fa-list',
+                      
                     ],
                     [
                         'text'        => 'Cadastrar',
                         'url'         => 'purchases/create',
-                        'icon'        => 'fas fa-fw fa-file',
+                        'icon'        => 'fas fa-fw fa-plus',
                     ],
                 ],
             ],
 
             [
                 'text'    => 'Ilustradores',
-                'icon'    => 'fas fa-fw fa-user',
+                'icon'    => 'fas fa-fw fa-brush',
                 'submenu' => [
                     [
                         'text'        => 'Listagem',
                         'url'         => 'illustrators',
-                        // 'icon'        => 'far fa-fw fa-file',
-                        'icon'        => 'fas fa-fw fa-circle text-info',
-                        // 'label'       => 4,
-                        // 'label_color' => 'success',
+                
+                        'icon'        => 'fas fa-fw fa-list',
+                       
                     ],
                     [
                         'text'        => 'Cadastrar',
                         'url'         => 'illustrators/create',
-                        'icon'        => 'fas fa-fw fa-file',
+                        'icon'        => 'fas fa-fw fa-plus',
+                    ],
+                ],
+            ],
+
+            [
+                'text'    => 'Idiomas',
+                'icon'    => 'fas fa-fw fa-globe',
+                'submenu' => [
+                    [
+                        'text'        => 'Listagem',
+                        'url'         => 'languages',
+                    
+                        'icon'        => 'fas fa-fw fa-list',
+                       
+                     
+                    ],
+                    [
+                        'text'        => 'Cadastrar',
+                        'url'         => 'languages/create',
+                        'icon'        => 'fas fa-fw fa-plus',
                     ],
                 ],
             ],
