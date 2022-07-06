@@ -226,157 +226,150 @@ return [
 
     'menu' => [
         [
-            'text'    => 'Clientes',
-            'icon'    => 'fas fa-fw fa-user',
+            'text' => 'Livros',
+            'icon' => 'fas fa-fw fa-book',
             'submenu' => [
                 [
-                    'text'        => 'Listagem',
-                    'url'         => 'clients',
-                
-                    'icon'        => 'fas fa-fw fa-list',
-               
-                ],
-                [
-                    'text'        => 'Cadastrar',
-                    'url'         => 'clients/create',
-                    'icon'        => 'fas fa-fw fa-plus',
-                ],
-            ],
-        ],
-
-        [
-            'text'    => 'Autores',
-            'icon'    => 'fas fa-fw fa-users',
-            'submenu' => [
-                [
-                    'text'        => 'Listagem',
-                    'url'         => 'authors',
-             
-                    'icon'        => 'fas fa-fw fa-list',
-               
-                ],
-                [
-                    'text'        => 'Cadastrar',
-                    'url'         => 'authors/create',
-                    'icon'        => 'fas fa-fw fa-plus',
-                ],
-            ], 
-        ],
-
-        [
-            'text'    => 'Livros',
-            'icon'    => 'fas fa-fw fa-book',
-            'submenu' => [
-                [
-                    'text'        => 'Listagem',
-                    'url'         => 'books',
+                    'text' => 'Listar',
+                    'url' => 'books',
                  
-                    'icon'        => 'fas fa-fw fa-list',
+                    'icon' => 'fas fa-fw fa-list',
                    
                 ],
                 [
-                    'text'        => 'Cadastrar',
-                    'url'         => 'books/create',
-                    'icon'        => 'fas fa-fw fa-plus',
+                    'text' => 'Cadastrar',
+                    'url' => 'books/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ], 
         ],
-
         [
-            'text'    => 'Editora',
-            'icon'    => 'fas fa-fw fa-dove',
+            'text' => 'Autores',
+            'icon' => 'fas fa-fw fa-users',
             'submenu' => [
                 [
-                    'text'        => 'Listagem',
-                    'url'         => 'publishers',
+                    'text' => 'Listar',
+                    'url' => 'authors',
              
-                    'icon'        => 'fas fa-fw fa-list',
-              
+                    'icon' => 'fas fa-fw fa-list',
+               
                 ],
                 [
-                    'text'        => 'Cadastrar',
-                    'url'         => 'publishers/create',
-                    'icon'        => 'fas fa-fw fa-plus',
+                    'text' => 'Cadastrar',
+                    'url' => 'authors/create',
+                    'icon' => 'fas fa-fw fa-plus',
+                ],
+            ], 
+        ],
+        [
+            'text' => 'Ilustradores',
+            'icon' => 'fas fa-fw fa-brush',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'illustrators',
+            
+                    'icon' => 'fas fa-fw fa-list',
+                   
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url' => 'illustrators/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ],
         ],
-
         [
-            'text'    => 'Categorias',
-            'icon'    => 'fas fa-fw fa-list',
+            'text' => 'Categorias',
+            'icon' => 'fas fa-fw fa-list',
             'submenu' => [
                 [
-                    'text'        => 'Listagem',
-                    'url'         => 'categories',
+                    'text' => 'Listar',
+                    'url' => 'categories',
              
-                    'icon'        => 'fas fa-fw fa-list',
+                    'icon' => 'fas fa-fw fa-list',
                   
                 ],
                 [
-                    'text'        => 'Cadastrar',
-                    'url'         => 'categories/create',
-                    'icon'        => 'fas fa-fw fa-plus',
+                    'text' => 'Cadastrar',
+                    'url' => 'categories/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ],
         ],
-
-            [
-                'text'    => 'Compras',
-                'icon'    => 'fas fa-fw fa-barcode',
-                'submenu' => [
-                    [
-                        'text'        => 'Listagem',
-                        'url'         => 'purchases',
-                     
-                        'icon'        => 'fas fa-fw fa-list',
-                      
-                    ],
-                    [
-                        'text'        => 'Cadastrar',
-                        'url'         => 'purchases/create',
-                        'icon'        => 'fas fa-fw fa-plus',
-                    ],
+        [
+            'text' => 'Editoras',
+            'icon' => 'fas fa-fw fa-dove',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'publishers',
+             
+                    'icon' => 'fas fa-fw fa-list',
+              
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url' => 'publishers/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ],
-
-            [
-                'text'    => 'Ilustradores',
-                'icon'    => 'fas fa-fw fa-brush',
-                'submenu' => [
-                    [
-                        'text'        => 'Listagem',
-                        'url'         => 'illustrators',
+        ],
+        [
+            'text' => 'Idiomas',
+            'icon' => 'fas fa-fw fa-globe',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'languages',
                 
-                        'icon'        => 'fas fa-fw fa-list',
-                       
-                    ],
-                    [
-                        'text'        => 'Cadastrar',
-                        'url'         => 'illustrators/create',
-                        'icon'        => 'fas fa-fw fa-plus',
-                    ],
+                    'icon' => 'fas fa-fw fa-list',
+                   
+                 
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url' => 'languages/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ],
-
-            [
-                'text'    => 'Idiomas',
-                'icon'    => 'fas fa-fw fa-globe',
-                'submenu' => [
-                    [
-                        'text'        => 'Listagem',
-                        'url'         => 'languages',
+        ],
+        [
+            'text' => 'Clientes',
+            'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'clients',
+                
+                    'icon' => 'fas fa-fw fa-list',
+               
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url' => 'clients/create',
+                    'icon' => 'fas fa-fw fa-plus',
+                ],
+            ],
+        ],
+        [
+            'text' => 'Compras',
+            'icon' => 'fas fa-fw fa-barcode',
+            'submenu' => [
+                [
+                    'text' => 'Listar',
+                    'url' => 'purchases',
                     
-                        'icon'        => 'fas fa-fw fa-list',
-                       
-                     
-                    ],
-                    [
-                        'text'        => 'Cadastrar',
-                        'url'         => 'languages/create',
-                        'icon'        => 'fas fa-fw fa-plus',
-                    ],
+                    'icon' => 'fas fa-fw fa-list',
+                    
+                ],
+                [
+                    'text' => 'Cadastrar',
+                    'url' => 'purchases/create',
+                    'icon' => 'fas fa-fw fa-plus',
                 ],
             ],
+        ],
     ],
     
 
