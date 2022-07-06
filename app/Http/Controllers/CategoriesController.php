@@ -20,7 +20,7 @@ class CategoriesController extends Controller
             $categories = Category::where('name', 'ilike', '%'.$filtering.'%')
                                 ->orderBy("name")
                                 ->paginate(5)
-                                ->setpath('cateogries?name=' . $filtering);
+                                ->setpath('categories?name=' . $filtering);
 
         return view('categories.index', ['categories' => $categories]);
     }
