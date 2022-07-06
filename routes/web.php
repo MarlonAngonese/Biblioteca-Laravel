@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -89,3 +90,7 @@ Route::group(['prefix' => 'languages', 'where' => ['id' => '[0-9]+']], function 
     Route::get('edit/{id}', ['as' => 'languages.edit', 'uses' => '\App\Http\Controllers\LanguagesController@edit']);
     Route::put('update/{id}', ['as' => 'languages.update', 'uses' => '\App\Http\Controllers\LanguagesController@update']);
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
