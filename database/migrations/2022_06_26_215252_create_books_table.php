@@ -21,8 +21,10 @@ return new class extends Migration
             $table->string('image_url', 255);
             $table->unsignedBigInteger('category_id');
             $table->unsignedBigInteger('publisher_id');
+            $table->unsignedBigInteger('language_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->foreign('publisher_id')->references('id')->on('publishers')->onDelete('cascade');
+            $table->foreign('language_id')->references('id')->on('languages')->onDelete('cascade');
             $table->timestamps();
         });
     }

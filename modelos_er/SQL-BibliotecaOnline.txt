@@ -1,0 +1,120 @@
+/* ModeloLogico-BibliotecaOnline: */
+
+CREATE TABLE clients (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR NOT NULL,
+    lastname VARCHAR NOT NULL,
+    birthday DATE NOT NULL,
+    email VARCHAR NOT NULL,
+    password VARCHAR NOT NULL,
+    username VARCHAR NOT NULL,
+    UNIQUE (email, id)
+);
+
+CREATE TABLE authors (
+    id INTEGER PRIMARY KEY UNIQUE,
+    name VARCHAR NOT NULL,
+    birthday DATE,
+    bio TEXT
+);
+
+CREATE TABLE illustrators (
+    id INTEGER PRIMARY KEY UNIQUE,
+    name VARCHAR NOT NULL,
+    birthday DATE,
+    bio TEXT
+);
+
+CREATE TABLE purchases (
+    id INTEGER PRIMARY KEY UNIQUE,
+    payment_method VARCHAR NOT NULL,
+    total DOUBLE NOT NULL,
+    status BOOLEAN NOT NULL DEFAULT FALSE,
+    client_id INTEGER NOT NULL
+);
+
+CREATE TABLE books (
+    id INTEGER PRIMARY KEY UNIQUE,
+    name VARCHAR NOT NULL,
+    price DOUBLE NOT NULL,
+    edition VARCHAR NOT NULL,
+    image_url VARCHAR NOT NULL,
+    category_id INTEGER NOT NULL,
+    publisher_id INTEGER NOT NULL
+    language_id INTERGER NOT NULL
+);
+
+CREATE TABLE categories (
+    id INTEGER PRIMARY KEY UNIQUE,
+    name VARCHAR NOT NULL
+);
+
+CREATE TABLE publishers (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR NOT NULL
+);
+
+CREATE TABLE authors_books (
+    book_id INTEGER NOT NULL,
+    author_id INTEGER NOT NULL
+);
+
+CREATE TABLE illustrators_books (
+    illustrator_id INTEGER NOT NULL,
+    book_id INTEGER NOT NULL
+);
+
+CREATE TABLE purchases_books (
+    book_id INTEGER NOT NULL,
+    purchase_id INTEGER NOT NULL
+);
+ 
+ALTER TABLE purchases ADD CONSTRAINT FK_purchases_1
+    FOREIGN KEY (client_id)
+    REFERENCES clients (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE books ADD CONSTRAINT FK_books_2
+    FOREIGN KEY (category_id)
+    REFERENCES categories (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE books ADD CONSTRAINT FK_books_3
+    FOREIGN KEY (publisher_id)
+    REFERENCES publishers (id)
+    ON DELETE CASCADE;
+
+ALTER TABLE books ADD CONSTRAINT FK_books_4
+    FOREIGN KEY (language_id)
+    REFERENCES languages (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE authors_books ADD CONSTRAINT FK_authors_books_1
+    FOREIGN KEY (book_id)
+    REFERENCES books (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE authors_books ADD CONSTRAINT FK_authors_books_2
+    FOREIGN KEY (author_id)
+    REFERENCES authors (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE illustrators_books ADD CONSTRAINT FK_illustrators_books_1
+    FOREIGN KEY (illustrator_id)
+    REFERENCES illustrators (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE illustrators_books ADD CONSTRAINT FK_illustrators_books_2
+    FOREIGN KEY (book_id)
+    REFERENCES books (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE purchases_books ADD CONSTRAINT FK_purchases_books_1
+    FOREIGN KEY (book_id)
+    REFERENCES books (id)
+    ON DELETE CASCADE;
+ 
+ALTER TABLE purchases_books ADD CONSTRAINT FK_purchases_books_2
+    FOREIGN KEY (purchase_id)
+    REFERENCES purchases (id)
+    ON DELETE CASCADE;

@@ -81,4 +81,11 @@ Route::group(['prefix' => 'illustrators', 'where' => ['id' => '[0-9]+']], functi
     Route::put('update/{id}', ['as' => 'illustrators.update', 'uses' => '\App\Http\Controllers\IllustratorsController@update']);
 });
 
-
+Route::group(['prefix' => 'languages', 'where' => ['id' => '[0-9]+']], function () {
+    Route::any('', ['as' => 'languages', 'uses' => '\App\Http\Controllers\LanguagesController@index']);
+    Route::get('create', ['as' => 'languages.create', 'uses' => '\App\Http\Controllers\LanguagesController@create']);
+    Route::post('store', ['as' => 'languages.store', 'uses' => '\App\Http\Controllers\LanguagesController@store']);
+    Route::get('delete/{id}', ['as' => 'languages.delete', 'uses' => '\App\Http\Controllers\LanguagesController@delete']);
+    Route::get('edit/{id}', ['as' => 'languages.edit', 'uses' => '\App\Http\Controllers\LanguagesController@edit']);
+    Route::put('update/{id}', ['as' => 'languages.update', 'uses' => '\App\Http\Controllers\LanguagesController@update']);
+});
