@@ -39,8 +39,8 @@ class BooksController extends Controller
      */
     public function store(BookRequest $request) {
         $book = Book::create($request->all());
-        // Synchronize Book with Authors to author_books table 
         $book->authors()->sync($request->get('authors'));
+        $book->illustrators()->sync($request->get('illustrators'));
 
         return redirect('books');
     }
@@ -70,12 +70,11 @@ class BooksController extends Controller
     public function update(BookRequest $request, $id) {
         $book = Book::find($id);
         $book->update($request->all());
-        // Synchronize Book with Authors to author_books table 
         $book->authors()->sync($request->get('authors'));
+        $book->illustrators()->sync($request->get('illustrators'));
 
         return redirect('books');
     }
-
 
     /**
      * View Book Method

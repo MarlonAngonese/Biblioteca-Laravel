@@ -18,6 +18,7 @@ class Book extends Model
         'image_url',
         'category_id',
         'publisher_id',
+        'language_id'
     ];
 
     public function category() {
@@ -26,6 +27,10 @@ class Book extends Model
 
     public function publisher() {
         return $this->belongsTo('App\Models\Publisher');
+    }
+
+    public function language() {
+        return $this->belongsTo('App\Models\Language');
     }
 
     public function authors() {

@@ -19,11 +19,11 @@
 
         <table class="table table-stripe table-bordered table-hover">
             <thead>
-                        <th>#</th>
-                        <th>Nome</th>
-                        <th>Data de Nascimento</th>
-                        <th>Livros</th>
-                        <th>Ações</th>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Data de Nascimento</th>
+                <th>Livros</th>
+                <th>Ações</th>
             </thead>
             <tbody>
                 @foreach($illustrators as $illustrator)
@@ -33,7 +33,7 @@
                         <td>{{ Carbon\Carbon::parse($illustrator->birthday)->format('d/m/Y') }}</td>
                         <td>
                             @foreach ($illustrator->books as $book)
-                                <li>{{ $illustrator->name }}</li>
+                                <li>{{ $book->name }}</li>
                             @endforeach
                         </td>
                         <td>
