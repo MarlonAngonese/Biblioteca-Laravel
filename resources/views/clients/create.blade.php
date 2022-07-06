@@ -19,13 +19,13 @@
             </div>
 
             <div class="form-group">
-                {!! Form::label('birthday', 'Data de Nascimento:') !!}
-                {!! Form::date('birthday', null, ['class' => 'form-control']) !!}
+                {!! Form::label('lastname', 'Sobrenome:') !!}
+                {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
             </div>
 
             <div class="form-group">
-                {!! Form::label('lastname', 'Sobrenome:') !!}
-                {!! Form::text('lastname', null, ['class' => 'form-control', 'required']) !!}
+                {!! Form::label('birthday', 'Data de Nascimento:') !!}
+                {!! Form::date('birthday', null, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">

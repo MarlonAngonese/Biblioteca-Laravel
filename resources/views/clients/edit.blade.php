@@ -17,15 +17,15 @@
                 {!! Form::label('name', 'Nome:') !!}
                 {!! Form::text('name', $client->name, ['class' => 'form-control', 'required']) !!}
             </div>
+            
+            <div class="form-group">
+                {!! Form::label('lastname', 'Sobrenome:') !!}
+                {!! Form::text('lastname', $client->lastname, ['class' => 'form-control']) !!}
+            </div>
 
             <div class="form-group">
                 {!! Form::label('birthday', 'Data de Nascimento:') !!}
                 {!! Form::date('birthday', $client->birthday, ['class' => 'form-control']) !!}
-            </div>
-
-            <div class="form-group">
-                {!! Form::label('lastname', 'Sobrenome:') !!}
-                {!! Form::text('lastname', $client->lastname, ['class' => 'form-control']) !!}
             </div>
 
             <div class="form-group">
