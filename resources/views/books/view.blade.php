@@ -10,6 +10,7 @@
         <p><strong>Preço: </strong>R${{ $book->price }}</p>
         <p><strong>Categoria: </strong>{{ $book->category->name }}</p>
         <p><strong>Editora: </strong>{{ $book->publisher->name }}</p>
+        <p><strong>Idioma: </strong>{{ $book->language->name }}</p>
         <p>
             <strong>Autores: </strong>
             @foreach ($book->authors as $author)
